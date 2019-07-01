@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebAPI.Models.PreSentence>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourtName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfOffender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OffenderFatherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActSec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfReceiving)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LetterNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PoliceStation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfOffender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OffenderFatherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActSec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfReceiving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoliceStation)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PSid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PSid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PSid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
